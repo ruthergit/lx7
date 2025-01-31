@@ -1,4 +1,5 @@
 import Footer from "../components/footer";
+import { motion } from "framer-motion"
 
 const Home = () => {
 
@@ -9,7 +10,12 @@ const Home = () => {
         title="Embedded Content"
         className="min-w-[1920px] min-h-[1080px] "
       />
-      <div className='w-full h-full flex flex-row items-center justify-center  absolute px-56 '>
+      <motion.div 
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+      className='w-full h-full flex flex-row items-center justify-center  absolute px-56 '>
         <div className='w-full h-full font-Montserrat flex flex-col justify-center '>
             <div className='w-auto h-auto text-white '>
               <h1 className='font-extrabold text-7xl pb-6'>
@@ -27,15 +33,25 @@ const Home = () => {
         <div className='w-full h-full relative'>
             <img src="/pics/heading-pic2.png" className='absolute pb-10 bottom-0 right-0 w-[510px]' alt="" />
         </div>
-    </div>
+    </motion.div>
     </div>
 
 
     <div className='h-[90vh] w-full bg-WhitekBG px-80 py-16 font-Montserrat'>
-      <div className='h-1/6'>
+      <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+      className='h-1/6'>
           <h1 className='text-center font-bold text-5xl'>Our Services</h1>
-      </div>
-      <div class=" grid grid-rows-2 grid-cols-3">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        class=" grid grid-rows-2 grid-cols-3">
         <div class=" flex items-center justify-center relative">
           <img className='' src="/pics/services1.png" alt="" />
           <p className='absolute z-10 text-white font-semibold text-xl bottom-12 '>SOUND SYSTEM</p>
@@ -60,11 +76,16 @@ const Home = () => {
           <img src="/pics/services6.png" alt="" />
           <p className='absolute z-10 text-white font-semibold text-xl bottom-12 '>LED WALLS</p>
           </div>
-    </div>
+    </motion.div>
     </div>
     
 
-    <div className='h-[75vh] w-full bg-BlackBG relative font-Montserrat text-white '>
+    <motion.div
+    initial={{ opacity: 0, y: 15 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 1 }}
+    className='h-[75vh] w-full bg-BlackBG relative font-Montserrat text-white '>
         <img className='absolute inset-0 h-full w-full object-cover filter brightness-50 hue-rotate-10' src="/pics/bg-image-red.png" alt="" />
         <div className='h-auto text-center absolute w-full px-80'>
             <h3 className='font-bold text-xl pt-11'>WHY CHOOSE US</h3>
@@ -88,10 +109,14 @@ const Home = () => {
             <p className='mt-6 text-xl'>With years of expertise, our team ensures seamless planning and execution, delivering exceptional results every time.</p>
           </div>
         </div>
-    </div>
+    </motion.div>
 
-    <div className='h-[80vh] w-full bg-WhitekBG px-56 py-16 font-Montserrat flex justify-center text-BlackBG'>
-        <div className='w-full flex flex-col justify-center items-baseline'>
+    <div className='h-[80vh] w-full  bg-WhitekBG px-56 py-16 font-Montserrat flex justify-center text-BlackBG'>
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5 }} className='w-full flex flex-col justify-center items-baseline'>
             <h1 className='font-bold text-5xl mb-4'>What Our <br /> Customers Says</h1>
             <p className='text-xl mb-7 '>Our clients trust us to deliver unforgettable experiences through exceptional sound, lighting, and visuals. Here’s what they have to <br /> say about our services.</p>
             <div className='flex gap-2'>
@@ -102,8 +127,12 @@ const Home = () => {
                   Learn More
               </button>
             </div>
-        </div>
-        <div className='w-full py-24 pl-2 text-xl flex flex-col gap-3'>
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5 }} className='w-full py-24 pl-2 text-xl flex flex-col gap-3'>
           <div className='w-full h-1/4  pl-20'>
               <div className='flex flex-row items-center justify-center h-full gap-5 bg-Yellow px-4 rounded-lg shadow-lg'>
                 <img src="/pics/customer1.png" alt="" />
@@ -128,7 +157,7 @@ const Home = () => {
                 <p>“Thank you for the nice service you have provided in our event. You guys made our big day extra special!”</p>
               </div>
           </div>
-        </div>
+        </motion.div>
     </div>
 
     <Footer></Footer>
