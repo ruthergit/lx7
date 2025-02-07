@@ -1,5 +1,9 @@
 import {NavLink} from 'react-router-dom';
 const Navbar = () => {
+  const btnActive = ({ isActive }) => isActive ? 
+  'bg-transparent px-7 py-3 rounded-lg font-semibold text-transparent text-xl cursor-default' : 
+  'bg-Yellow px-7 py-3 rounded-lg font-semibold text-BlackBG shadow-lg text-xl'; 
+
   return (
     <nav className="h-auto w-full flex justify-between absolute z-10 px-56 font-Montserrat ">
       <div className='w-auto h-auto pt-7 '>
@@ -15,14 +19,12 @@ const Navbar = () => {
           <NavLink to="/About" >
             <li>About</li>
             </NavLink>
-          {/* <NavLink to="/Contact" >
-            <li>Contact</li>
-          </NavLink> */}
       </ul>
+         
       <div className='w-auto h-auto pt-11'>
-        <button className='bg-Yellow px-7 py-3 rounded-lg font-semibold text-BlackBG shadow-lg text-xl'>
-                Book Now
-        </button>
+      <NavLink to="/Contact" className={btnActive} >  
+            Book Now
+      </NavLink>
       </div>
     </nav>
   );
